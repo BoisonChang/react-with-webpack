@@ -1,0 +1,18 @@
+{
+  // 這個物件用來定義 TypeScript 編譯器的設定選項。
+  "compilerOptions": {
+    "sourceMap": true, // 設定是否要產生 sourcemap 檔案，用來除錯時定位原始碼位置。
+    "noImplicitAny": false, // 設定是否要禁止使用未明確聲明型別的變數。
+    "module": "commonjs", // 設定模組輸出方式，這裡使用 commonjs。
+    "target": "es5", // 設定編譯的 JavaScript 版本，這裡使用 es5。
+    "lib": ["dom", "ES6"], // 設定要包含的 TypeScript 標準庫，這裡包含 dom 和 ES6。
+    "removeComments": true, // 設定是否要移除程式碼中的註解。
+    "allowSyntheticDefaultImports": false, // 設定是否允許合成默認匯入。
+    "jsx": "react", // 設定使用的 JSX 工具，這裡使用 react。
+    "allowJs": true, // 設定是否允許編譯 JavaScript 檔案。
+    "baseUrl": "./", // 設定相對路徑的基礎路徑。
+    "plugins": [{ "name": "typescript-plugin-css-modules" }] // 設定要載入的 TypeScript 插件，typescript-plugin-css-modules 讓開發者在 TypeScript 中使用 CSS Modules。CSS Modules 是一種 CSS 模組化的解決方案，可以讓開發者在不同的模組之間使用相同的 CSS 類別名稱，避免命名衝突和全局污染等問題。這個插件會在 TypeScript 編譯時將 CSS Modules 的類別名稱進行轉換，使其成為 TypeScript 中的類別型別。
+  },
+  "include": ["**/*.ts", "**/*.tsx"], // 設定要包含的 TypeScript 檔案，使用 glob pattern 模式。
+  "exclude": ["node_modules", "target"] // 設定要排除的檔案或資料夾，使用 glob pattern 模式。
+}
