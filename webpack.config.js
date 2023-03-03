@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // 將設定檔案匯出，以讓 Webpack 能夠讀取設定。
 module.exports = {
   // 設定 entry point 為 ./src/index.jsx。
-  entry: "./src/index.jsx",
+  entry: "./src/index.tsx",
   // 設定 bundle 的輸出目錄和檔名。
   output: {
     path: path.join(__dirname, "/dist"),
@@ -26,6 +26,10 @@ module.exports = {
   // 設定 Webpack 規則，用來轉換不同的檔案。
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        loader: "ts-loader",
+      },
       {
         test: /.js$/,
         exclude: /node_modules/, // 設定要排除的檔案目錄。
@@ -73,6 +77,6 @@ module.exports = {
   },
   // 設定 Webpack 可以處理的檔案類型。
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".ts", ".tsx", ".js", ".css", ".scss"],
   },
 };
