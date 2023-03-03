@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import styles from "./App.scss"
 
 
 export default function App() {
     return (
         <div>
-            <h1 >Hello World!</h1>
+            <h1 className={styles.h1}>Hello World!</h1>
         </div>
     )
 }
